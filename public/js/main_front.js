@@ -129,9 +129,9 @@ __webpack_require__.r(__webpack_exports__);
     getAllPosts: function getAllPosts() {
       var _this = this;
 
-      axios.get("/api/posts").then(function (result) {
-        console.log(data.results);
-        _this.allPosts = data.results;
+      axios.get("/api/posts").then(function (response) {
+        console.log(response.data.results);
+        _this.allPosts = response.data.results;
       })["catch"](function (error) {
         console.log(error);
       });

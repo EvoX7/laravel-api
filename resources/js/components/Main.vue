@@ -30,9 +30,9 @@ export default {
       axios
         .get("/api/posts")
 
-        .then((result) => {
-          console.log(data.results);
-          this.allPosts = data.results;
+        .then((response) => {
+          console.log(response.data.results);
+          this.allPosts = response.data.results;
         })
         .catch((error) => {
           console.log(error);
