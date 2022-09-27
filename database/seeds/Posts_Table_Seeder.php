@@ -21,7 +21,7 @@ class Posts_Table_Seeder extends Seeder
         $categories = Category::all();
         $tags = Tag::all();
 
-        for ($i = 0; $i < 250; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $newPost = new Post();
             $newPost->user_id = $faker->randomElement($allUser)->id;
             $newPost->category_id = $faker->randomElement($categories)->id;

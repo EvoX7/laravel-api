@@ -1,11 +1,12 @@
 <template>
 <ul>
-    <li></li>
+    <li>{{ post.title }}</li>
 </ul>
 </template>
 
 <script>
 export default {
+    props: ['post'],
 
 }
 </script>

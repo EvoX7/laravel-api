@@ -1,7 +1,13 @@
 <template>
   <main>
-    <h1>Posts:</h1>
-    <Card />
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Posts:</h1>
+          <Card v-for="post in allPosts" :key="post.id" :post="post" />
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -20,12 +26,6 @@ export default {
   },
 
   methods: {
-    // getDiskInfo: function () {
-    //   axios
-    //     .get("https://flynn.boolean.careers/exercises/api/array/music")
-    //     .then((result) => {
-    //       console.log(result.data.response);
-    //       this.releases = result.data.response;
     getAllPosts() {
       axios
         .get("/api/posts")

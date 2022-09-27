@@ -95,7 +95,9 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['post']
+});
 
 /***/ }),
 
@@ -120,12 +122,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    // getDiskInfo: function () {
-    //   axios
-    //     .get("https://flynn.boolean.careers/exercises/api/array/music")
-    //     .then((result) => {
-    //       console.log(result.data.response);
-    //       this.releases = result.data.response;
     getAllPosts: function getAllPosts() {
       var _this = this;
 
@@ -178,15 +174,10 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("ul", [_c("li", [_vm._v(_vm._s(_vm.post.title))])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("ul", [_c("li")]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -207,7 +198,20 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("h1", [_vm._v("Posts:")]), _vm._v(" "), _c("Card")], 1);
+  return _c("main", [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-12"
+  }, [_c("h1", [_vm._v("Posts:")]), _vm._v(" "), _vm._l(_vm.allPosts, function (post) {
+    return _c("Card", {
+      key: post.id,
+      attrs: {
+        post: post
+      }
+    });
+  })], 2)])])]);
 };
 
 var staticRenderFns = [];
