@@ -20,9 +20,8 @@ class PostController extends Controller
         return response()->json([
 
             'response' => true,
-            'posts_available' => count($posts),
+            'posts_count' => count($posts),
             'results' => $posts
-
         ]);
     }
 
@@ -55,7 +54,16 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+
+        if ($post)
+            return response()->json([
+                'response' => true,
+                'results' => [
+                    'single_post' => $post
+                ]
+            ]);
+        return response('Sorry, page not found.', 404);
     }
 
     // /**
