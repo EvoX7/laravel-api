@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +15,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $categories = Category::all();
 
         return response()->json([
-
             'response' => true,
-            'posts_available' => count($posts),
-            'results' => $posts
+            'categories' => count($categories),
+            'results' => $categories
+
         ]);
     }
 
@@ -46,25 +46,16 @@ class PostController extends Controller
     //     //
     // }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $post = Post::find($id);
-
-        if ($post)
-            return response()->json([
-                'response' => true,
-                'results' => [
-                    'single_post' => $post
-                ]
-            ]);
-        return response('Sorry, page not found.', 404);
-    }
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function show($id)
+    // {
+        //
+    // }
 
     // /**
     //  * Show the form for editing the specified resource.
