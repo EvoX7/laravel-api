@@ -20,18 +20,27 @@ export default {
   },
 
   methods: {
+    // getDiskInfo: function () {
+    //   axios
+    //     .get("https://flynn.boolean.careers/exercises/api/array/music")
+    //     .then((result) => {
+    //       console.log(result.data.response);
+    //       this.releases = result.data.response;
     getAllPosts() {
       axios
         .get("/api/posts")
 
-        .then((response) => {
-          console.log(response.data.results);
-          this.allPosts = response.data.results;
+        .then((result) => {
+          console.log(data.results);
+          this.allPosts = data.results;
         })
         .catch((error) => {
           console.log(error);
         });
     },
+  },
+  created() {
+    this.getAllPosts();
   },
 };
 </script>
