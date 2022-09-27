@@ -174,10 +174,48 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("ul", [_c("li", [_vm._v(_vm._s(_vm.post.title))])]);
+  return _c("div", {
+    staticClass: "card",
+    staticStyle: {
+      width: "18rem"
+    }
+  }, [_c("img", {
+    staticClass: "card-img-top",
+    attrs: {
+      src: _vm.posts.post_img,
+      alt: "Image"
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "card-body"
+  }, [_c("h5", {
+    staticClass: "card-title"
+  }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("p", {
+    staticClass: "card-subtitle"
+  }, [_vm._v(_vm._s(_vm.post.user.name))]), _vm._v(" "), _c("p", {
+    staticClass: "card-text"
+  }, [_vm._v(_vm._s(_vm.post.post_content))]), _vm._v(" "), _c("p", {
+    staticClass: "card-text"
+  }, [_vm._v(_vm._s(_vm.post.post_date))])]), _vm._v(" "), _vm._m(0)]);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "card-body"
+  }, [_c("a", {
+    staticClass: "card-link",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Card link")]), _vm._v(" "), _c("a", {
+    staticClass: "card-link",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Another link")])]);
+}];
 render._withStripped = true;
 
 
@@ -198,23 +236,21 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
+  return _vm._m(0);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
   return _c("main", [_c("div", {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col-12"
-  }, [_c("h1", [_vm._v("Posts:")]), _vm._v(" "), _vm._l(_vm.allPosts, function (post) {
-    return _c("Card", {
-      key: post.id,
-      attrs: {
-        post: post
-      }
-    });
-  })], 2)])])]);
-};
-
-var staticRenderFns = [];
+  }, [_c("h1", [_vm._v("Posts:")])])])])]);
+}];
 render._withStripped = true;
 
 

@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-12">
           <h1>Posts:</h1>
-          <Card v-for="post in allPosts" :key="post.id" :post="post" />
+          
         </div>
       </div>
     </div>
