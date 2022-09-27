@@ -156,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Main.vue */ "./resources/js/components/Main.vue");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  componets: {
+  components: {
     Main: _components_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
