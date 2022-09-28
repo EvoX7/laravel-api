@@ -6,9 +6,14 @@
         <div class="card-body">
           <h5 class="card-title font-weight-bold">{{ post.title }}</h5>
           <p class="card-text">{{ post.post_content }}</p>
-          <p class="card-text">Category:{{ post.category.name }}</p>
-          <p class="card-subtitle">Tags: {{ post.tag.name }}</p>
-          <p class="card-subtitle"> Post Date: {{ post.post_date }}</p>
+
+          <h6 class="card-text"><strong>Category: </strong>{{ post.category.name }}</h6>
+
+          <div><h6 class="card-text"><strong>Tags: </strong><span class="card-text" v-for="tag in post.tags" :key="tag.id">
+            #{{ tag.name }}
+          </span></h6>
+          </div>
+          <p class="card-subtitle mt-2"><strong>Post date: </strong> {{ post.post_date }}</p>
         </div>
       </div>
     </div>
@@ -22,11 +27,7 @@ export default {
 </script>
 
 <style>
-
 .card {
-    width: 25rem;
+  width: 25rem;
 }
-
-
-
 </style>

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1 class="text-center mt-5 mb-5">Today's Post</h1>
+    <h1 class="text-center mt-5 mb-5">Today's Posts</h1>
     <div class="container">
       <div class="row justify-content-center">
         <Card v-for="post in posts" :key="post.id" :post="post" />

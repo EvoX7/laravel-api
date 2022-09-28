@@ -214,13 +214,18 @@ var render = function render() {
     staticClass: "card-title font-weight-bold"
   }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
-  }, [_vm._v(_vm._s(_vm.post.post_content))]), _vm._v(" "), _c("p", {
+  }, [_vm._v(_vm._s(_vm.post.post_content))]), _vm._v(" "), _c("h6", {
     staticClass: "card-text"
-  }, [_vm._v("Category:" + _vm._s(_vm.post.category.name))]), _vm._v(" "), _c("p", {
-    staticClass: "card-subtitle"
-  }, [_vm._v("Tags: " + _vm._s(_vm.post.tag.name))]), _vm._v(" "), _c("p", {
-    staticClass: "card-subtitle"
-  }, [_vm._v(" Post Date: " + _vm._s(_vm.post.post_date))])])])])]);
+  }, [_c("strong", [_vm._v("Category: ")]), _vm._v(_vm._s(_vm.post.category.name))]), _vm._v(" "), _c("div", [_c("h6", {
+    staticClass: "card-text"
+  }, [_c("strong", [_vm._v("Tags: ")]), _vm._l(_vm.post.tags, function (tag) {
+    return _c("span", {
+      key: tag.id,
+      staticClass: "card-text"
+    }, [_vm._v("\n          #" + _vm._s(tag.name) + "\n        ")]);
+  })], 2)]), _vm._v(" "), _c("p", {
+    staticClass: "card-subtitle mt-2"
+  }, [_c("strong", [_vm._v("Post date: ")]), _vm._v(" " + _vm._s(_vm.post.post_date))])])])])]);
 };
 
 var staticRenderFns = [];
@@ -246,7 +251,7 @@ var render = function render() {
 
   return _c("main", [_c("h1", {
     staticClass: "text-center mt-5 mb-5"
-  }, [_vm._v("Today's Post")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Today's Posts")]), _vm._v(" "), _c("div", {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "row justify-content-center"
@@ -302,7 +307,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card {\r\n    width: 25rem;\n}\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.card {\r\n  width: 25rem;\n}\r\n", ""]);
 
 // exports
 
