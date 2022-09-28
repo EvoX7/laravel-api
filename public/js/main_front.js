@@ -307,7 +307,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card {\r\n  width: 25rem;\n}\r\n", ""]);
+exports.push([module.i, "\n.card {\r\n  width: 25rem;\r\n  height: 45rem;\n}\r\n", ""]);
 
 // exports
 
