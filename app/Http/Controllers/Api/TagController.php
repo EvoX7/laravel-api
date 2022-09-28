@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::with('posts')->get();
+        $tags = Tag::with('posts')->get();
 
         return response()->json([
             'response' => true,
-            'categories' => count($categories),
-            'results' => $categories
+            'tags' => count($tags),
+            'results' => $tags
 
         ]);
     }
@@ -54,13 +54,13 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::find($id);
+        $tag = Tag::find($id);
 
-        if ($category)
+        if ($tag)
             return response()->json([
                 'response' => true,
                 'results' => [
-                    'category' => $category
+                    'tag' => $tag
                 ]
             ]);
         return response('Sorry, page not found.', 404);

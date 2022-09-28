@@ -118,7 +118,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      categories: [],
+      tags: []
     };
   },
   methods: {
@@ -131,10 +133,32 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    getCategories: function getCategories() {
+      var _this2 = this;
+
+      axios.get("/api/categories").then(function (response) {
+        console.log(response.data.results);
+        _this2.categories = response.data.results;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    getTags: function getTags() {
+      var _this3 = this;
+
+      axios.get("/api/tags").then(function (response) {
+        console.log(response.data.results);
+        _this3.tags = response.data.results;
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   },
   created: function created() {
     this.getAllPosts();
+    this.getCategories();
+    this.getTags();
   }
 });
 
@@ -192,7 +216,11 @@ var render = function render() {
     staticClass: "card-text"
   }, [_vm._v(_vm._s(_vm.post.post_content))]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
-  }, [_vm._v(_vm._s(_vm.post.post_date))])])])])]);
+  }, [_vm._v("Category:" + _vm._s(_vm.post.category.name))]), _vm._v(" "), _c("p", {
+    staticClass: "card-subtitle"
+  }, [_vm._v("Tags: " + _vm._s(_vm.post.tag.name))]), _vm._v(" "), _c("p", {
+    staticClass: "card-subtitle"
+  }, [_vm._v(" Post Date: " + _vm._s(_vm.post.post_date))])])])])]);
 };
 
 var staticRenderFns = [];
