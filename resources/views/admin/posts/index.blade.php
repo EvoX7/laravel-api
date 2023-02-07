@@ -26,7 +26,7 @@
                         <th scope="col">Author</th>
                         <th scope="col">Title</th>
                         <th scope="col">Category</th>
-                        <th scope="col">Tags</th>
+                        {{-- <th scope="col">Tags</th> --}}
                         <th scope="col">Date</th>
 
 
@@ -40,7 +40,7 @@
                                 <td class="font-weight-bold"><a class="font-weight-bold"
                                         href="{{ route('admin.posts.show', $post->id) }}">{{ $post->title }}</a>
                                 </td>
-                                <td> <span class="badge badge-pill text-light w-75"
+                                <td> <span class="badge badge-pill text-white w-75"
                                         @if (isset($post->category)) style="background-color: {{ $post->category->color }}"> {{ $post->category->name }} 
                                         @else 
                                         style="background-color: grey">
@@ -48,7 +48,7 @@
                                         @endif
                                         </span>
                                 </td>
-                                <td class="text-center">{{ $post->tag_id }}</td>
+                                {{-- <td class="text-center">{{ $post->tag_id }}</td> --}}
                                 <td>{{ $post->post_date }}</td>
                                 <td>
                                     <a class="btn btn-primary font-weight-bold"

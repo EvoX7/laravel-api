@@ -38,6 +38,8 @@ export default {
           console.log(error);
         });
     },
+
+    
     getCategories() {
       axios
         .get("/api/categories")
